@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DesafioCepMOBRJ.Views.CepsPage" 
+             xmlns:views="clr-namespace:DesafioCepMOBRJ.Views"  
+             xmlns:viewModels="clr-namespace:DesafioCepMOBRJ.ViewModels"  
+             xmlns:models="clr-namespace:DesafioCepMOBRJ.Models"
+             Title="Desafio Cep MOBRJ">
+
+    <TabbedPage.Children>
+        <views:CepPesquisaPage>
+            <views:CepPesquisaPage.BindingContext>
+                <viewModels:CepPesquisaViewModel/>
+            </views:CepPesquisaPage.BindingContext>
+        </views:CepPesquisaPage>
+
+        <views:CepListaPage>
+            <views:CepListaPage.BindingContext>
+                <viewModels:CepListaViewModel/>
+            </views:CepListaPage.BindingContext>
+        </views:CepListaPage>
+
+        <views:CepMapaPage>
+            <views:CepMapaPage.BindingContext>
+                <viewModels:CepMapaViewModel/>
+            </views:CepMapaPage.BindingContext>
+        </views:CepMapaPage>
+    </TabbedPage.Children>
+</TabbedPage>

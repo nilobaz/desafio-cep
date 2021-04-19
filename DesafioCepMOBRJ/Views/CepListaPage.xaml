@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DesafioCepMOBRJ.Views.CepListaPage"
+             xmlns:viewModels="clr-namespace:DesafioCepMOBRJ.ViewModels"
+             Title="Lista" BackgroundColor="LightGray">
+
+    <ContentPage.Content>
+
+        <ScrollView>
+            <Frame Margin="20">
+                <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                    <Label Text="Lista de CEPs - Local" FontSize="Medium"/>
+                    <ListView x:Name="ListCep" RowHeight="130" SelectionMode="Single" SeparatorColor="{StaticResource Primary}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="1.5*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Cep, StringFormat='CEP: {0}'}" Grid.ColumnSpan="2" FontAttributes="Bold"/>
+                                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding Logradouro, StringFormat='Logradouro: {0}'}" Grid.ColumnSpan="2" MaxLines="2"/>
+                                        <Label Grid.Row="2" Grid.Column="0" Text="{Binding Bairro, StringFormat='Bairro: {0}'}" Grid.ColumnSpan="2"/>
+                                        <Label Grid.Row="3" Grid.Column="0" Text="{Binding Localidade, StringFormat='Cidade: {0}'}" Grid.ColumnSpan="2"/>
+                                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding UF, StringFormat='UF: {0}'}" HorizontalOptions="End"/>
+
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                NumberOfTapsRequired="1"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:CepListaViewModel}}, Path=CepTapped}"		
+                                                CommandParameter="{Binding .}">
+                                            </TapGestureRecognizer>
+                                        </Grid.GestureRecognizers>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

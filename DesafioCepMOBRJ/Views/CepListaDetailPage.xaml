@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DesafioCepMOBRJ.Views.CepListaDetailPage"
+             xmlns:viewModels="clr-namespace:DesafioCepMOBRJ.ViewModels">
+
+    <ContentPage.BindingContext>
+        <viewModels:CepListaDetailViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Frame Margin="20">
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <Label Text="CEP Detalhado" FontSize="Large" FontAttributes="Bold" />
+                
+                <Label Text="{Binding Cep, StringFormat='CEP: {0}'}" FontSize="Medium"/>
+
+                <Label Text="{Binding Logradouro, StringFormat='Logradouro: {0}'}" FontSize="Medium"/>
+             
+                <Label Text="{Binding Complemento, StringFormat='Complemento: {0}'}" FontSize="Medium"/>
+             
+                <Label Text="{Binding Bairro, StringFormat='Bairro: {0}'}" FontSize="Medium"/>
+           
+                <Label Text="{Binding Localidade, StringFormat='Cidade: {0}'}" FontSize="Medium"/>
+             
+                <Label Text="{Binding UF, StringFormat='UF: {0}'}" FontSize="Medium"/>
+              
+                <Label Text="{Binding Ibge, StringFormat='IBGE: {0}'}" FontSize="Medium"/>
+          
+                <Label Text="{Binding DDD, StringFormat='DDD: {0}'}" FontSize="Medium"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
