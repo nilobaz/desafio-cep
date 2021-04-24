@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.desafiocepmobrj" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="29" />
 	<application android:label="DesafioCepMOBRJ.Android" android:theme="@style/MainTheme">
-		<meta-data android:name="com.google.android.geo.API_KEY" android:value=""/>
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value=""/> <!--INSERT YOUR GOOGLE API TO TEST-->
 	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>
